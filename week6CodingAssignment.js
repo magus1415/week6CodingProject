@@ -105,3 +105,4 @@ if (player1.points > player2.points) {
     console.log('Player 2 wins with a score of: ' + player2.points)
 }
 
+
