@@ -11,16 +11,8 @@ class Card {
 
 }
 
-class Player1 {
-    constructor(points) {
-        this.hand = [];
-        this.points = 0;
-        this.tie = 0;
-    }
-}
-
-class Player2 {
-    constructor(points) {
+class Player {
+    constructor() {
         this.hand = [];
         this.points = 0;
         this.tie = 0;
@@ -33,8 +25,8 @@ function shuffle(deckArray) {
 }
 
 
-let player1 = new Player1;
-let player2 = new Player2;
+let player1 = new Player;
+let player2 = new Player;
 var deckOfCards = [];
 
 const suits = [
