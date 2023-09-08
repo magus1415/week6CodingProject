@@ -42,7 +42,7 @@ const suits = [
     'Spades',
     'Clubs',
     'Diamonds'
-];
+]; 
 
 const values = {
     2: 'two',
@@ -58,23 +58,27 @@ const values = {
     12: 'Queen',
     13: 'King',
     14: 'Ace'
-};
+}; 
 
+//Here runs a loop to iterate and push the card and suit to the the deckOfCards array, giving us a deck of 52 cards
 for (const value in values) {
     for (const suit in suits) {
         deckOfCards.push(new Card(value, values[value], suits[suit]));
     }
-}
+} 
 
 
-deckOfCards = shuffle(deckOfCards);
+//This shuffles the deckOfCards array
+deckOfCards = shuffle(deckOfCards); 
 
+//This will split the shuffled deck in half and give one half to player1 and the other half to player 2
 const splitHalf = Math.floor(deckOfCards.length / 2);
 player1.hand = deckOfCards.slice(0, splitHalf);
 player2.hand = deckOfCards.slice(splitHalf);
 
 
 
+//This will iterate through how many cards are in hand and compare values of the cards and add a point to the respective player point counter if they have a higher card and add a point to the tie counter if it's a tie
 for (let i = 0; i < player2.hand.length; i++) {
     if (player1.hand[i].cardNumber == player2.hand[i].cardNumber) {
         player1.tie += 1
@@ -89,6 +93,7 @@ for (let i = 0; i < player2.hand.length; i++) {
     }
 }
 
+//This will console a tie with correct phrasing
 if (player1.tie == 1) {
     console.log(`There was a tie ` + player1.tie + ' time')
 } else if (player1.tie == 0) {
@@ -98,7 +103,7 @@ if (player1.tie == 1) {
 }
 
 
-
+//This will console which player wins
 if (player1.points > player2.points) {
     console.log('Player 1 wins wih a score of: ' + player1.points)
 } else {
