@@ -24,9 +24,9 @@ describe('Week card class testing', function () {
             expect(cname).to.equal('Ace of Clubs');
         });
 
-        it('Should equal 14', function () {
+        it('Should equal Clubs', function () {
             var c = new Card(14, 'Ace', 'Clubs');
-            var cnumber = c.getCardNumber();
+            var cnumber = c.getCardSuit();
             expect(cnumber).to.equal('Clubs');
         });
     })
@@ -45,7 +45,7 @@ class Card {
     getCardString() {
         return `${this.cardName} of ${this.cardSuit}`;
     }
-    getCardNumber() {
+    getCardSuit() {
         return this.cardSuit
     }
 
